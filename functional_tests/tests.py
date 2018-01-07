@@ -15,6 +15,7 @@ class NewVisitorTest(StaticLiveServerTestCase):
     def setUpClass(cls):
         if os.environ['SITENAME']:
             cls.server_url = 'http://{}'.format(os.environ['SITENAME'])
+            cls.live_server_url = ''
             return
         super().setUpClass()
         cls.server_url = cls.live_server_url
