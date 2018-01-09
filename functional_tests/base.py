@@ -10,20 +10,6 @@ MAX_WAIT = 10
 
 class FunctionalTest(StaticLiveServerTestCase):
 
-    @classmethod
-    def setUpClass(cls):
-        if os.environ.get('SITENAME'):
-            cls.server_url = 'http://{}'.format(os.environ.get('SITENAME'))
-            cls.live_server_url = ''
-            return
-        super().setUpClass()
-        cls.server_url = cls.live_server_url
-
-    @classmethod
-    def tearDownClass(cls):
-        if cls.server_url == cls.live_server_url:
-            super().tearDownClass()
-
     def setUp(self):
         self.browser = webdriver.Firefox()
         staging_server = os.environ.get('STAGING_SERVER')
