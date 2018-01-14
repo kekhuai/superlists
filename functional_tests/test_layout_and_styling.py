@@ -10,6 +10,7 @@ class LayoutAndStylingTest(FunctionalTest):
 
         # She notices the input box is nicely centered
         inputbox = self.get_item_input_box()
+
         self.assertAlmostEqual(
             inputbox.location['x'] + inputbox.size['width'] / 2,
             512,
