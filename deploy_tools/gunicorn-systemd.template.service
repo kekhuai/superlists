@@ -1,0 +1,12 @@
+[Unit]
+Description=Gunicorn server for SITENAME
+
+[Service]
+Restart=on-failure
+User=kekhuay
+WorkingDirectory=/home/kekhuay/sites/SITENAME/source
+Environment=EMAIL_PASSWORD=SEKRIT
+ExecStart=/home/kekhuay/sites/SITENAME/virtualenv/gunicorn --bind unix:/tmp/SITENAME.socket superlists.wsgi:application
+
+[Install]
+WantedBy=multi-user.target
