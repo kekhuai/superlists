@@ -53,7 +53,7 @@ def _update_virtualenv(source_folder):
         run(f'python3.6 -m venv {virtualenv_folder}')
     run(
         f'{virtualenv_folder}/bin/pip install'
-        ' -r {source_folder}/requirements.txt'
+        f' -r {source_folder}/requirements.txt'
     )
 
 
