@@ -3,8 +3,8 @@ from fabric.context_managers import settings
 
 
 def _get_manage_dot_py(host):
-    return f'~/sites/{host}/virtualenv/bin/python'
-    ' ~/sites/{host}/source/manage.py'
+    return f'~/sites/{host}/virtualenv/bin/python' \
+        f' ~/sites/{host}/source/manage.py'
 
 
 def reset_database(host):
