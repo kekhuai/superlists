@@ -45,7 +45,7 @@ class MyListTest(FunctionalTest):
                 'Reticulate splines'
             )
         )
-        self.find_element_by_link_text('Reticulate splines').click()
+        self.browser.find_element_by_link_text('Reticulate splines').click()
         self.wait_for(
             lambda: self.assertEqual(self.browser.current_url, first_list_url)
         )
